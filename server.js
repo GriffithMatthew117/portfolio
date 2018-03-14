@@ -1,3 +1,5 @@
+import { normalize } from 'path';
+
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
@@ -87,10 +89,10 @@ app.post('/contact', (req,res) => {
 })
 
 
+var port = normalizePort(process.env.PORT || '8080');
 
-
-app.listen(8080, () => {
-    console.log('listening at http://localhost: 8080')
+app.listen(port, () => {
+    console.log('listening at port ' + port)
 });
 
 app.get('/', (req, res) => {
