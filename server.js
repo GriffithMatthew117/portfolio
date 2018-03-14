@@ -95,7 +95,7 @@ app.listen(port, () => {
     console.log('listening at port ' + port)
 });
 
-app.get('/', (req, res) => {
+app.get('/index', (req, res) => {
     const data = {
     }
   
