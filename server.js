@@ -84,9 +84,7 @@ app.post('/contact', (req,res) => {
       from: '+17608915959'
   })
   .then((message) => {console.log(message.sid)
-    res.render(function thanks() {
-      alert (`Thank you ${req.body.name} for contacting me. I will get ahold of you shortly.`);
-    });
+    res.render('thanks')
   });
 })
 
@@ -101,8 +99,11 @@ app.listen(port, () => {
 });
 
 app.get('/', (req, res) => {
-    const data = {
+  const data = {
+    person: {
+      name: req.body.name
     }
+  }
   
     // Notice now the data is the second argument passed to the template render method
     res.render('index', data);
