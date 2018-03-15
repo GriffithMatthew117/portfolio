@@ -84,7 +84,9 @@ app.post('/contact', (req,res) => {
       from: '+17608915959'
   })
   .then((message) => {console.log(message.sid)
-    res.render('index')
+    res.render(function thanks() {
+      alert (`Thank you ${req.body.name} for contacting me. I will get ahold of you shortly.`);
+    });
   });
 })
 
