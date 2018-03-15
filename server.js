@@ -80,8 +80,8 @@ app.post('/contact', (req,res) => {
       email: req.body.email,
       object: req.body.subject,
       body: `${req.body.name}  just contacted you: Email: ${req.body.email} Subject: ${req.body.subject} Message: ${req.body.message}`,
-      to: '+15634598306',  // Text this number
-      from: '+17608915959' // From a valid Twilio number
+      to: '+15634598306',
+      from: '+17608915959'
   })
   .then((message) => {console.log(message.sid)
     res.render('index')
