@@ -84,7 +84,7 @@ app.post('/contact', (req,res) => {
       from: '+17608915959' // From a valid Twilio number
   })
   .then((message) => {console.log(message.sid)
-    res.send('success')
+    res.render('index')
   });
 })
 
