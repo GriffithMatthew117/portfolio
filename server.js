@@ -26,6 +26,7 @@ client.messages.create({
 app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true}))
+app.use('view engine', 'ejs');
 
 //Here we're setting the views directory to be ./views
 //thereby letting the app know where to find the template files
@@ -106,7 +107,7 @@ app.get('/', (req, res) => {
   }
   
     // Notice now the data is the second argument passed to the template render method
-    res.render('index', data);
+    res.render('contact', data);
   });
 
 
