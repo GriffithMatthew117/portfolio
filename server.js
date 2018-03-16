@@ -60,9 +60,9 @@ app.get('/contact', (req, res) => {
 //   res.render('services');
 // });
 
-app.get('/thanks', (req, res) => {
-  res.render('thanks');
-});
+// app.get('/thanks', (req, res) => {
+//   res.render('thanks');
+// });
 
 // app.get('/single-project', (req, res) => {
 //   res.render('single-project');
@@ -101,7 +101,7 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
   const data = {
     person: {
-      firstName: req.body.name
+      // firstName: req.body.name
     }
   }
   
