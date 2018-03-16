@@ -106,7 +106,7 @@ app.get('/', (req, res) => {
   }
   
     // Notice now the data is the second argument passed to the template render method
-    res.render('index', data);
+    res.render('contact', data);
   });
 
 
