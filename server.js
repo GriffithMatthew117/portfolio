@@ -64,7 +64,7 @@ app.get('/thanks', (req, res) => {
   res.render('thanks');
 });
 
-app.get('/single-project', (req, res) => {
+app.get('/fido', (req, res) => {
   res.render('fido');
 });
 
