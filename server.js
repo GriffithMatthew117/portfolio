@@ -101,7 +101,7 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
   const data = {
     person: {
-      // firstName: req.body.name
+      firstName: req.body.name
     }
   }
   
