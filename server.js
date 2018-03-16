@@ -64,9 +64,9 @@ app.get('/thanks', (req, res) => {
   res.render('thanks');
 });
 
-// app.get('/single-project', (req, res) => {
-//   res.render('single-project');
-// });
+app.get('/single-project', (req, res) => {
+  res.render('fido');
+});
 
 app.post('/contact', (req,res) => {
   var accountSid = 'AC211492b5174e07ed6c58644c74b65aa6'; // Your Account SID from www.twilio.com/console
