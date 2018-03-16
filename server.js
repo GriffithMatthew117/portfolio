@@ -68,7 +68,7 @@ app.get('/fido', (req, res) => {
   res.render('fido');
 });
 
-app.post('/thanks', (req,res) => {
+app.post('/contact', (req,res) => {
   var accountSid = 'AC211492b5174e07ed6c58644c74b65aa6'; // Your Account SID from www.twilio.com/console
   var authToken = '73dedda1ab9d02e27118cd6d6f86b13f';   // Your Auth Token from www.twilio.com/console
   
@@ -84,7 +84,7 @@ app.post('/thanks', (req,res) => {
       from: '+17608915959'
   })
   .then((message) => {console.log(message.sid)
-    res.render('thanks')
+    res.render('contact')
   });
 })
 
@@ -100,9 +100,9 @@ app.listen(port, () => {
 
 app.get('/', (req, res) => {
   const data = {
-    // person: {
-    //   firstName: req.body.name
-    // }
+    person: {
+      firstName: req.body.name
+    }
   }
   
     // Notice now the data is the second argument passed to the template render method
