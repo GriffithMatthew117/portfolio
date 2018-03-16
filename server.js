@@ -100,9 +100,9 @@ app.listen(port, () => {
 
 app.get('/', (req, res) => {
   const data = {
-    person: {
-      firstName: req.body.name
-    }
+    // person: {
+    //   firstName: req.body.name
+    // }
   }
   
     // Notice now the data is the second argument passed to the template render method
