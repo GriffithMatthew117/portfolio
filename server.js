@@ -84,7 +84,7 @@ app.post('/contact', (req,res) => {
       from: '+17608915959'
   })
   .then((message) => {console.log(message.sid)
-    res.render('thanks')
+    res.render('contact')
   });
 })
 
