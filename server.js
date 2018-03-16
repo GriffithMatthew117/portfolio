@@ -64,9 +64,9 @@ app.get('/thanks', (req, res) => {
   res.render('thanks');
 });
 
-app.get('/fido', (req, res) => {
-  res.render('fido');
-});
+// app.get('/single-project', (req, res) => {
+//   res.render('single-project');
+// });
 
 app.post('/contact', (req,res) => {
   var accountSid = 'AC211492b5174e07ed6c58644c74b65aa6'; // Your Account SID from www.twilio.com/console
@@ -84,7 +84,7 @@ app.post('/contact', (req,res) => {
       from: '+17608915959'
   })
   .then((message) => {console.log(message.sid)
-    res.render('contact')
+    res.render('thanks')
   });
 })
 
