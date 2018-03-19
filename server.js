@@ -26,7 +26,7 @@ client.messages.create({
 app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true}))
-app.use('view engine', 'ejs');
+
 
 //Here we're setting the views directory to be ./views
 //thereby letting the app know where to find the template files
@@ -57,9 +57,9 @@ app.get('/contact', (req, res) => {
 //   res.render('portfolio');
 // });
 
-// app.get('/services', (req, res) => {
-//   res.render('services');
-// });
+app.get('/fido', (req, res) => {
+  res.render('fido');
+});
 
 // app.get('/thanks', (req, res) => {
 //   res.render('thanks');
@@ -76,16 +76,25 @@ app.post('/contact', (req,res) => {
   var twilio = require('twilio');
   var client = new twilio(accountSid, authToken);
   
+  
+  const data = {
+    person: {
+      firstName: req.body.firstName
+    }
+  }
+
   client.messages.create({
-      name: req.body.name,
+      name: req.body.firstName,
       email: req.body.email,
       object: req.body.subject,
-      body: `${req.body.name}  just contacted you: Email: ${req.body.email} Subject: ${req.body.subject} Message: ${req.body.message}`,
+      body: `${req.body.firstName}  just contacted you: Email: ${req.body.email} Subject: ${req.body.subject} Message: ${req.body.message}`,
       to: '+15634598306',
       from: '+17608915959'
   })
-  .then((message) => {console.log(message.sid)
-    res.render('contact')
+  .then((message) => {
+    console.log(message.sid);
+    console.log("Data is ", data);
+    res.render('contact', data);
   });
 })
 
@@ -107,7 +116,7 @@ app.get('/', (req, res) => {
   }
   
     // Notice now the data is the second argument passed to the template render method
-    res.render('contact', data);
+    res.render('index', data);
   });
 
 

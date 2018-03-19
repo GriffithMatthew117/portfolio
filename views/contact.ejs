@@ -11,7 +11,6 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link rel="icon" href="img/fav.png" type="image/x-icon">
 
     <!-- main css -->
     <link href="css/style.css" rel="stylesheet">
@@ -48,7 +47,7 @@
 
     <!-- top bar -->
     <div class="top-bar">
-        <h1>Thank you <%= person.firstName %> for contacting me</h1>
+        <h2>Thank you <%= person.firstName %>, for contacting me</h2>
         <h4>You will be redirected in <b>five</b> seconds</h4>
     </div>
     <!-- end top bar -->
@@ -78,6 +77,9 @@
     <script src="js/menu.js"></script>
     <script src="js/animated-headline.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript">
+        setTimeout("window.location='localhost:8080'",5000);
+    </script>
 
 
     <!--  custom script -->
