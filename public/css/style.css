@@ -1193,7 +1193,7 @@ textarea:focus {
         float: none;
     }
     .email {
-        font-size: 12px !important;
+        font-size: 16px !important;
     }
 }
 
@@ -1208,7 +1208,7 @@ textarea:focus {
         padding: 50px 0;
     }
     .email {
-        font-size: 12px !important;
+        font-size: 16px !important;
     }
 }
 
@@ -1224,6 +1224,6 @@ textarea:focus {
         line-height: 30px;
     }
     .email {
-        font-size: 12px !important;
+        font-size: 16px !important;
     }
 }
