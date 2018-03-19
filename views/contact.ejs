@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Box personal portfolio Template</title>
+    <title>Redirect</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -30,14 +30,14 @@
 <body>
 
     <!-- Preloader -->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div class="pre-container">
             <div class="spinner">
                 <div class="double-bounce1"></div>
                 <div class="double-bounce2"></div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- end Preloader -->
 
     <div class="container-fluid">
@@ -47,25 +47,29 @@
 
     <!-- top bar -->
     <div class="top-bar">
-        <h2>Thank you <%= person.firstName %>, for contacting me</h2>
-        <h4>You will be redirected in <b>five</b> seconds</h4>
+        <h2>Thank you
+            <%= person.firstName %>, for contacting me</h2>
+        <h4>You will be redirected in
+            <b id="countdown">five</b> seconds</h4>
     </div>
     <!-- end top bar -->
 
     <!-- main-container -->
-    <div class="container main-container">
-    </div>
+    <!-- <div class="container main-container">
+    </div> -->
     <!-- end main-container -->
 
     <!-- footer -->
-    <footer>
+    <!-- <footer>
         <div class="container-fluid">
         </div>
-    </footer>
+    </footer> -->
     <!-- end footer -->
 
     <!-- back to top -->
-    <a href="#0" class="cd-top"><i class="ion-android-arrow-up"></i></a>
+    <!-- <a href="#0" class="cd-top">
+        <i class="ion-android-arrow-up"></i>
+    </a> -->
     <!-- end back to top -->
 
 
@@ -77,12 +81,28 @@
     <script src="js/menu.js"></script>
     <script src="js/animated-headline.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
-    <script>
-            setTimeout(function () {
-               // after 2 seconds
-               window.location = "/index";
-            }, 5000)
-          </script>
+    <script type="text/javascript">
+        // Total seconds to wait
+        var seconds = 5;
+
+        function countdown() {
+            seconds = seconds - 1;
+            if (seconds < 0) {
+                // Chnage your redirection link here
+                window.location = "/index";
+            } else {
+                // Update remaining seconds
+                document.getElementById("countdown").innerHTML = seconds;
+                // Count down using javascript
+                window.setTimeout("countdown()", 1000);
+            }
+        }
+
+        // Run countdown function
+        countdown();
+    </script>
+
+
 
     <!--  custom script -->
     <script src="js/custom.js"></script>
