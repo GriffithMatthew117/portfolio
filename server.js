@@ -92,14 +92,14 @@ app.post('/contact', (req,res) => {
 
 //var port = normalizePort(process.env.PORT || '8080');
 var portInfo = process.env.PORT || '8080';
-// var port = parseInt(portInfo, 10);
+var port = parseInt(portInfo, 10);
 
 
 app.listen(port, () => {
     console.log('listening at port ' + port)
 });
 
-app.get('/contact', (req, res) => {
+app.get('/', (req, res) => {
   const data = {
     person: {
       firstName: req.body.name
