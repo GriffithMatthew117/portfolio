@@ -1111,6 +1111,11 @@ textarea:focus {
     margin-right: 20px;
 }
 
+
+.social-icon {
+    display: inline-block;
+}
+
 .btn-box {
     background: #0099FF;
     padding: 10px 50px;
@@ -1187,6 +1192,9 @@ textarea:focus {
     .portfolio .categories-grid .categories ul li {
         float: none;
     }
+    .email {
+        font-size: 12px !important;
+    }
 }
 
 @media only screen and (max-width: 520px) {
@@ -1198,6 +1206,9 @@ textarea:focus {
     }
     .main-container {
         padding: 50px 0;
+    }
+    .email {
+        font-size: 12px !important;
     }
 }
 
@@ -1211,5 +1222,8 @@ textarea:focus {
     .top-bar h1 {
         font-size: 30px;
         line-height: 30px;
+    }
+    .email {
+        font-size: 12px !important;
     }
 }
