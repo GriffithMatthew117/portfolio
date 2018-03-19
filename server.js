@@ -99,7 +99,7 @@ app.listen(port, () => {
     console.log('listening at port ' + port)
 });
 
-app.get('/', (req, res) => {
+app.get('/contact', (req, res) => {
   const data = {
     person: {
       firstName: req.body.name
