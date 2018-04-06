@@ -9,23 +9,25 @@ const app = express();
 
 
 var accountSid = 'AC211492b5174e07ed6c58644c74b65aa6'; // Your Account SID from www.twilio.com/console
-var authToken = '73dedda1ab9d02e27118cd6d6f86b13f';   // Your Auth Token from www.twilio.com/console
+var authToken = '73dedda1ab9d02e27118cd6d6f86b13f'; // Your Auth Token from www.twilio.com/console
 
 var twilio = require('twilio');
 var client = new twilio(accountSid, authToken);
 
 client.messages.create({
     body: 'Hello from Node',
-    to: '+15634598306',  // Text this number
+    to: '+15634598306', // Text this number
     from: '+17608915959' // From a valid Twilio number
-})
-.then((message) => console.log(message.sid));
+  })
+  .then((message) => console.log(message.sid));
 
 
 
 app.use(morgan('dev'))
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true}))
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
 
 
 //Here we're setting the views directory to be ./views
@@ -42,7 +44,7 @@ app.set('view engine', 'ejs');
 //Now instead of using res.send we can use
 //res.render to send the output of the template by filename
 app.get('/index', (req, res) => {
-    res.render('index');
+  res.render('index');
 });
 
 app.get('/contact', (req, res) => {
@@ -61,6 +63,11 @@ app.get('/fido', (req, res) => {
   res.render('fido');
 });
 
+app.get('/tracker', (req, res) => {
+  res.render('tracker');
+});
+
+
 // app.get('/thanks', (req, res) => {
 //   res.render('thanks');
 // });
@@ -69,14 +76,14 @@ app.get('/fido', (req, res) => {
 //   res.render('single-project');
 // });
 
-app.post('/contact', (req,res) => {
+app.post('/contact', (req, res) => {
   var accountSid = 'AC211492b5174e07ed6c58644c74b65aa6'; // Your Account SID from www.twilio.com/console
-  var authToken = '73dedda1ab9d02e27118cd6d6f86b13f';   // Your Auth Token from www.twilio.com/console
-  
+  var authToken = '73dedda1ab9d02e27118cd6d6f86b13f'; // Your Auth Token from www.twilio.com/console
+
   var twilio = require('twilio');
   var client = new twilio(accountSid, authToken);
-  
-  
+
+
   const data = {
     person: {
       firstName: req.body.firstName
@@ -90,12 +97,12 @@ app.post('/contact', (req,res) => {
       body: `${req.body.firstName}  just contacted you: Email: ${req.body.email} Subject: ${req.body.subject} Message: ${req.body.message}`,
       to: '+15634598306',
       from: '+17608915959'
-  })
-  .then((message) => {
-    console.log(message.sid);
-    console.log("Data is ", data);
-    res.render('contact', data);
-  });
+    })
+    .then((message) => {
+      console.log(message.sid);
+      console.log("Data is ", data);
+      res.render('contact', data);
+    });
 })
 
 
@@ -105,7 +112,7 @@ var port = parseInt(portInfo, 10);
 
 
 app.listen(port, () => {
-    console.log('listening at port ' + port)
+  console.log('listening at port ' + port)
 });
 
 app.get('/', (req, res) => {
@@ -114,10 +121,7 @@ app.get('/', (req, res) => {
       firstName: req.body.name
     }
   }
-  
-    // Notice now the data is the second argument passed to the template render method
-    res.render('index', data);
-  });
 
-
-
+  // Notice now the data is the second argument passed to the template render method
+  res.render('index', data);
+});
